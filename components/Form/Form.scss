@@ -1,0 +1,110 @@
+@import "../../styles/helpers.scss";
+
+.form {
+  @include section;
+
+  background: $color-section-background;
+
+  .form__container {
+    padding: $gutter * 4 0;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $go-mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input {
+      width: 100%;
+      appearance: none;
+      border: none;
+      background: $color-input;
+      height: 48px;
+      border-radius: 24px;
+      font-size: 15px;
+      padding: $gutter $gutter * 2;
+      outline: none;
+      float: left;
+      min-width: 256px;
+      max-width: 250px;
+      font-weight: 500;
+      margin-right: $gutter * 2;
+      border: 2px solid rgba($color-brand-primary, 0);
+      transition: border-color 0.24s;
+
+      &:placeholder {
+        color: $color-input-placeholder;
+      }
+
+      &:focus {
+        border-color: rgba($color-brand-primary, 1);
+        box-shadow: 0 0 5px 5px rgba($color-brand-primary, 0.2);
+      }
+
+      @media (max-width: $go-mobile) {
+        margin: $gutter 0;
+        max-width: 450px;
+      }
+    }
+
+    button {
+      width: 100%;
+      appearance: none;
+      border: none;
+      background: $gradient;
+      height: 48px;
+      border-radius: 24px;
+      font-size: 15px;
+      font-weight: 500;
+      padding: $gutter $gutter;
+      min-width: 250px;
+      max-width: 250px;
+      color: $color-white;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.24s;
+      background-clip: padding-box;
+
+      &:focus,
+      &:hover {
+        box-shadow: 0 0 5px 5px rgba($color-brand-primary, 0.2);
+      }
+      @media (max-width: $go-mobile) {
+        margin: $gutter * 2 0;
+        max-width: 450px;
+      }
+    }
+  }
+
+  &.form--compact {
+    background: none;
+    padding: 0 $gutter * 4;
+
+    .container {
+      padding: $gutter * 3 0;
+
+      strong {
+        color: $color-brand-primary;
+        font-weight: bold;
+      }
+    }
+
+    .form__container {
+      padding: $gutter * 2 0;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.form__error {
+  color: $color-brand-secondary;
+  font-weight: bold;
+  font-size: 16px !important;
+}
+
+.form__ok {
+  color: $color-brand-primary;
+  font-weight: bold;
+  font-size: 16px !important;
+}

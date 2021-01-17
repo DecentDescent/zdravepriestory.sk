@@ -1,0 +1,136 @@
+@import "../../styles/helpers.scss";
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  2.5% {
+    opacity: 1;
+  }
+  22.5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+section.hero {
+  @include section;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    @media (max-width: $go-mobile) {
+      padding: $gutter * 3 $gutter * 2 $gutter * 6 $gutter * 2;
+    }
+  }
+  h1 {
+    font-size: 48px;
+    text-align: left;
+    max-width: 25ch;
+    margin: 0 0 $gutter * 3 0;
+
+    @media (max-width: $go-mobile) {
+      font-size: 32px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    span {
+      color: $color-brand-primary;
+    }
+  }
+
+  p {
+    text-align: left;
+    font-size: 25px;
+    max-width: 40ch;
+    margin: 0;
+
+    @media (max-width: $go-mobile) {
+      font-size: 21px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  .hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    @media (max-width: $go-mobile) {
+      display: none;
+    }
+    .slides {
+      width: 100%;
+      max-width: 1500px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .background__slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center right;
+
+      &:nth-child(1) {
+        background-image: url(/static/graphics/bg_4.png);
+        animation: fadeIn 40s 27s forwards infinite;
+        z-index: 1;
+      }
+      &:nth-child(2) {
+        background-image: url(/static/graphics/bg_3.png);
+        animation: fadeIn 40s 18s forwards infinite;
+        z-index: 1;
+      }
+      &:nth-child(3) {
+        background-image: url(/static/graphics/bg_2.png);
+        animation: fadeIn 40s 9s forwards infinite;
+        z-index: 1;
+      }
+      &:nth-child(4) {
+        background-image: url(/static/graphics/bg_1.png);
+        animation: fadeIn 40s 0s forwards infinite;
+        z-index: 1;
+      }
+      &:nth-child(5) {
+        background-image: url(/static/graphics/bg_1.png);
+        z-index: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.hero__text {
+  padding: 0 $gutter * 4;
+}

@@ -1,0 +1,21 @@
+$color-brand-primary: #169ba2;
+$color-brand-secondary: #de3452;
+$color-section-background: #ebeff6;
+$color-text: #272727;
+$color-icon-background: #c3e5e7;
+$color-input: #d9dce2;
+$color-input-placeholder: #696a74;
+$color-white: #ffffff;
+$color-gradient-start: #3ebac5;
+$color-gradient-end: #a3c4d9;
+$font-primary: "Arial", "Helvetica", sans-serif;
+
+$gradient: linear-gradient(
+  130deg,
+  $color-gradient-start 0%,
+  $color-gradient-end 100%
+);
+$container-big: 1400px;
+$gutter: 8px;
+
+$go-mobile: 850px;

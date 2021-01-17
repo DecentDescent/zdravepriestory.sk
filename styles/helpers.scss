@@ -1,0 +1,73 @@
+@import "./variables.scss";
+
+@mixin section {
+  width: 100%;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: $gutter * 6 $gutter * 4;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  max-width: 70ch;
+  margin: $gutter * 4 auto;
+
+  &.subheading {
+    margin-top: $gutter * 2;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 700;
+  max-width: 70ch;
+  margin: $gutter auto $gutter * 2 auto;
+}
+
+h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  max-width: 70ch;
+  margin: $gutter auto $gutter * 2 auto;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+p.lead {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: 60ch;
+  margin: 0 auto $gutter * 4;
+
+  @media (max-width: $go-mobile) {
+    font-size: 19px;
+    max-width: 40ch;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+i {
+  font-size: 12px;
+  font-style: italic;
+}

@@ -1,0 +1,232 @@
+@import "../../styles/variables.scss";
+
+header.header {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $gutter * 2;
+  padding: 0 16px;
+  .header__logo {
+    svg {
+      height: 48px;
+    }
+  }
+  .header__navigation {
+    .navigation__toggle {
+      svg {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: fill 0.24s;
+        position: absolute;
+        top: 40px;
+        right: 32px;
+        z-index: 999;
+        fill: $color-brand-primary;
+      }
+
+      &:hover {
+        svg {
+          fill: $color-brand-secondary;
+        }
+      }
+
+      svg.toggle__open {
+        display: block;
+      }
+
+      svg.toggle__close {
+        display: none;
+      }
+
+      &.navigation__toggle--active {
+        svg.toggle__open {
+          display: none;
+        }
+
+        svg.toggle__close {
+          display: block;
+        }
+      }
+
+      @media (min-width: $go-mobile + 1) {
+        display: none;
+      }
+    }
+
+    nav {
+      padding: 0;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+          padding: 0;
+
+          a {
+            padding: $gutter $gutter * 2;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: $color-text;
+            transition: color 0.24s;
+
+            @media (max-width: 1200px) {
+              font-size: 14px;
+            }
+
+            @media (max-width: 980px) {
+              font-size: 14px;
+              padding: $gutter;
+            }
+
+            @media (max-width: 950px) {
+              font-size: 13px;
+            }
+
+            &:hover {
+              color: $color-brand-primary;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $go-mobile) {
+        position: fixed;
+        width: 100%;
+        min-height: 100%;
+        background: $color-white;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        display: none;
+        overflow-y: auto;
+
+        &.navigation--active {
+          display: flex;
+        }
+
+        ul {
+          width: 100%;
+          height: 100%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          li {
+            margin: $gutter * 3 0;
+
+            a {
+              font-size: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header__call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div.call__container {
+      display: flex;
+      flex-direction: row;
+      background: $gradient;
+      padding: $gutter;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 32px;
+        margin-right: $gutter / 2;
+
+        @media (max-width: 1200px) {
+          display: none;
+        }
+      }
+
+      div {
+        align-items: center;
+        justify-content: center;
+
+        h4 {
+          font-size: 14px;
+          font-weight: 400;
+          color: $color-white;
+          text-align: center;
+          margin: 0 0 $gutter / 2 0;
+        }
+
+        span {
+          font-size: 18px;
+          color: $color-white;
+          font-weight: bold;
+          margin: 0;
+
+          @media (max-width: 1200px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $go-mobile) {
+      display: none;
+    }
+  }
+}
+
+.facebook {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    transition: all 0.24s;
+    fill: $color-text;
+  }
+
+  &:hover {
+    svg  {
+      fill: $color-brand-primary;
+    }
+  }
+}
+
+.navigation__call {
+  @media (min-width: $go-mobile + 1) {
+    display: none;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: fill 0.24s;
+    position: absolute;
+    top: 40px;
+    right: 82px;
+    z-index: 999;
+    fill: $color-brand-primary;
+  }
+
+  &:hover svg {
+    fill: $color-brand-secondary;
+  }
+}

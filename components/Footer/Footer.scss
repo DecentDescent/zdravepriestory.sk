@@ -1,0 +1,78 @@
+@import "../../styles/variables.scss";
+
+footer.footer {
+  width: 100%;
+  background: $gradient;
+
+  .footer__container {
+    nav {
+      margin: 0;
+      padding: $gutter * 3 $gutter;
+      margin-bottom: $gutter * 2;
+      ul {
+        margin: 0;
+
+        li {
+          display: inline-block;
+          @media (max-width: $go-mobile) {
+            display: block;
+            padding: $gutter 0;
+          }
+
+          a {
+            text-decoration: none;
+            color: $color-white;
+            font-size: 16px;
+            padding: $gutter $gutter * 2;
+            font-weight: bold;
+            transition: color 0.24s;
+
+            &:hover {
+              color: $color-brand-secondary;
+            }
+          }
+        }
+      }
+    }
+
+    width: 100%;
+    max-width: $container-big;
+    margin: 0 auto;
+    padding: $gutter * 6 $gutter * 4;
+    text-align: center;
+    color: $color-white;
+
+    p {
+      margin-bottom: $gutter * 4;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    a {
+      padding-top: $gutter * 2;
+      color: $color-white;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-brand-secondary;
+      }
+    }
+
+    svg {
+      width: 28px;
+      fill: $color-white;
+      margin-bottom: $gutter * 3;
+      transition: all 0.24s;
+
+      &:hover {
+        fill: $color-brand-secondary;
+      }
+    }
+    small {
+      opacity: 0.5;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
